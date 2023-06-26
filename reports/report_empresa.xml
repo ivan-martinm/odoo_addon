@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+        <report
+            id="practicas.report_empresa"
+            model="practicas.empresa"
+            string="Informe Empresa"
+            name="practicas.report_empresa_view"
+            file="practcas.report_empresa_view"
+            report_type="qweb-html"
+        />
+
+        <template id="report_empresa_view">
+            <t t-foreach="docs" t-as="empresa">
+                <div class="page">
+                    <h2 t-field="empresa.name" />
+                    <div>
+                        <strong>Direccion: </strong>
+                        <span t-field="empresa.direccion" />
+                    </div>
+                    <div>
+                        <strong>Alumnos: </strong>
+                        <t t-foreach="empresa.listaAlumnos" t-as="alumno">
+                            <ul>
+                                <li>
+                                    <strong>Nombre: </strong>
+                                    <span t-field="alumno.name" />
+                                </li>
+                                <li>
+                                    <strong>Apellidos: </strong>
+                                    <span t-field="alumno.apellidos" />
+                                </li>
+                                <li>
+                                    <strong>Fecha de nacimiento: </strong>
+                                    <span t-field="alumno.fechaNacimiento" />
+                                </li>
+                                <li>
+                                    <strong>Nota media: </strong>
+                                    <span t-field="alumno.notaMedia" />
+                                </li>
+                                <li>
+                                    <strong>Nota media texto: </strong>
+                                    <span t-field="alumno.notaMediaTexto" />
+                                </li>
+                            </ul>
+                            <hr/>
+                        </t>
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

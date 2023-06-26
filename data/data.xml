@@ -1,0 +1,65 @@
+<odoo>
+    <data>
+
+        <!-- Empresas -->
+        <record model="practicas.empresa" id="empresa_1">
+            <field name="name">Google</field>
+            <field name="direccion">Mountain View, California, EEUU</field>
+        </record>
+
+        <record model="practicas.empresa" id="empresa_2">
+            <field name="name">Microsoft</field>
+            <field name="direccion">Redmond, Washington, EEUU</field>
+            
+        </record>
+
+        <!-- Alumnos -->
+        <record model="practicas.alumno" id="alumno_1">
+            <field name="name">Ivan</field>
+            <field name="apellidos">Martin Murcia</field>
+            <field name="fechaNacimiento">2023-01-01</field>
+            <field name="cicloFormativo">0</field>
+            <field name="notaMedia">4.5</field>
+            <field name="empresa" ref="empresa_1" />
+        </record>
+
+        <record model="practicas.alumno" id="alumno_2">
+            <field name="name">Jorge</field>
+            <field name="apellidos">Garcia Gonzalez</field>
+            <field name="fechaNacimiento">2023-02-01</field>
+            <field name="cicloFormativo">1</field>
+            <field name="notaMedia">6.3</field>
+            <field name="empresa" ref="empresa_2" />
+        </record>
+
+        <record model="practicas.alumno" id="alumno_3">
+            <field name="name">Isabel</field>
+            <field name="apellidos">Perez Ramos</field>
+            <field name="fechaNacimiento">2023-03-01</field>
+            <field name="cicloFormativo">2</field>
+            <field name="notaMedia">9.2</field>
+            <field name="empresa" ref="empresa_1" />
+        </record>
+
+        <record model="practicas.alumno" id="alumno_4">
+            <field name="name">Maria</field>
+            <field name="apellidos">Flores Rodriguez</field>
+            <field name="fechaNacimiento">2023-04-01</field>
+            <field name="cicloFormativo">0</field>
+            <field name="notaMedia">8.1</field>
+            <field name="empresa" ref="empresa_1" />
+        </record>
+
+        <record model="practicas.alumno" id="alumno_5">
+            <field name="name">Javier</field>
+            <field name="apellidos">Lopez Fernandez</field>
+            <field name="fechaNacimiento">2023-05-01</field>
+            <field name="cicloFormativo">1</field>
+            <field name="notaMedia">9.8</field>
+            <field name="empresa" ref="empresa_2" />
+        </record>
+
+    </data>
+
+
+</odoo>

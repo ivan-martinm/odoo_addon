@@ -1,0 +1,111 @@
+<odoo>
+  <data>
+    <!-- Vistas de alumno -->
+
+    <!-- alumno árbol -->
+    <record model="ir.ui.view" id="practicas.alumno_tree">
+      <field name="name">practicas.alumno.tree</field>
+      <field name="model">practicas.alumno</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" />
+          <field name="apellidos" />
+          <field name="fechaNacimiento" />
+          <field name="cicloFormativo" />
+          <field name="notaMedia" />
+          <field name="notaMediaTexto" />
+          <field name="empresa" />
+        </tree>
+      </field>
+    </record>
+
+    <!-- alumno formulario -->
+    <record model="ir.ui.view" id="practicas.alumno_form">
+      <field name="name">practicas.alumno.form</field>
+      <field name="model">practicas.alumno</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+            <field name="name" />
+            <field name="apellidos" />
+            <field name="fechaNacimiento" />
+            <field name="cicloFormativo" />
+            <field name="notaMedia" />
+            <field name="notaMediaTexto" />
+            <field name="empresa" />
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- alumno búsqueda -->
+    <record model="ir.ui.view" id="practicas.alumno_search_view">
+      <field name="name">practicas.alumno.search</field>
+      <field name="model">practicas.alumno</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" />
+          <field name="apellidos" />
+          <filter name="sobresaliente" domain="[('notaMedia','&gt;=',9)]" />
+        </search>
+      </field>
+    </record>
+
+    <!-- alumno acción de ventana -->
+    <record model="ir.actions.act_window" id="practicas.alumno_action_window">
+      <field name="name">Alumnos</field>
+      <field name="res_model">practicas.alumno</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Vistas de empresa -->
+
+    <!-- empresa árbol -->
+    <record model="ir.ui.view" id="practicas.empresa_tree">
+      <field name="name">practicas.empresa.tree</field>
+      <field name="model">practicas.empresa</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" />
+          <field name="direccion" />
+          <field name="listaAlumnos" />
+        </tree>
+      </field>
+    </record>
+
+    <!-- empresa formulario -->
+    <record model="ir.ui.view" id="practicas.empresa_form">
+      <field name="name">practicas.empresa.form</field>
+      <field name="model">practicas.empresa</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+            <field name="name" />
+            <field name="direccion" />
+            <field name="listaAlumnos" />
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- empresa acción de ventana -->
+    <record model="ir.actions.act_window" id="practicas.empresa_action_window">
+      <field name="name">Empresas</field>
+      <field name="res_model">practicas.empresa</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menús -->
+
+    <!-- Padre -->
+    <menuitem name="Practicas externas" id="practicas.menu_root" />
+    <!-- Alumno -->
+    <menuitem name="Alumnos" id="practicas.alumno_menu" parent="practicas.menu_root"
+      action="practicas.alumno_action_window" groups="practicas_coordinador,practicas_profesor" />
+    <!-- Empresa -->
+    <menuitem name="Empresas" id="practicas.empresa_menu" parent="practicas.menu_root"
+      action="practicas.empresa_action_window" groups="practicas_coordinador,practicas_profesor" />
+
+  </data>
+</odoo>

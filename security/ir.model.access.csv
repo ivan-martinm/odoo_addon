@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+alumno_coordinador,coordinador practicas,model_practicas_alumno,practicas_coordinador,1,1,1,1
+empresa_coordinador,coordinador practicas,model_practicas_empresa,practicas_coordinador,1,1,1,1
+alumno_profesor,profesor practicas,model_practicas_alumno,practicas_profesor,1,0,0,0
+empresa_profesor,profesor practicas,model_practicas_empresa,practicas_profesor,1,0,0,0
